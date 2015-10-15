@@ -1,0 +1,52 @@
+{   
+  "variables": {
+    "ESXI_PASSWORD": "{{env `ESXI_PASSWORD`}}",
+    "ESXI_IP": "{{env `ESXI_IP`}}"
+  },
+  "builders": [{
+    "type": "vmware-iso",
+    "guest_os_type": "Ubuntu-64",
+    "iso_url": "http://releases.ubuntu.com/14.04/ubuntu-14.04.3-server-amd64.iso",
+    "iso_checksum": "0501c446929f713eb162ae2088d8dc8b6426224a",
+    "iso_checksum_type": "sha1",
+    "disk_size": "10000",
+    "ssh_username": "packer",
+    "ssh_password": "packer",
+    "ssh_wait_timeout": "1200s",
+    "floppy_files": [
+      "preseed.cfg"
+    ],
+    "headless": "true",
+    "boot_wait": "5s",
+    "boot_command": [
+      "<esc><esc><enter><wait>",
+      "/install/vmlinuz ",
+      "preseed/file=/floppy/preseed.cfg ",
+      "debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
+      "hostname={{.Name}} ",
+      "fb=false debconf/frontend=noninteractive ",
+      "keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=USA ",
+      "keyboard-configuration/variant=USA console-setup/ask_detect=false ",
+      "initrd=/install/initrd.gz -- <enter><wait><enter>"
+    ],
+    "shutdown_command": "shutdown -P now",
+    "remote_type": "esx5",
+    "remote_port": "22",
+    "remote_host": "{{user `ESXI_PASSWORD`}}",
+    "remote_datastore": "datastore1",
+    "remote_username": "root",
+    "remote_password": "{{user `ESXI_PASSWORD`}}",
+    "vmx_data": {
+      "memsize": "1024",
+      "numvcpus": "2",
+      "ethernet0.present": "TRUE",
+      "ethernet0.startConnected": "TRUE",
+      "ethernet0.virtualDev": "e1000",
+      "ethernet0.networkName": "VM Network",
+      "ethernet0.addressType": "generated",
+      "ethernet0.connectionType": "bridged",
+      "ethernet0.generatedAddressOffset": "0",
+      "ethernet0.wakeOnPcktRcv": "FALSE"
+    }
+  }]
+}
