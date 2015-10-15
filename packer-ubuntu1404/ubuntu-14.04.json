@@ -17,9 +17,9 @@
       "preseed.cfg"
     ],
     "headless": "true",
-    "boot_wait": "5s",
+    "boot_wait": "10s",
     "boot_command": [
-      "<esc><esc><enter><wait>",
+      "<esc><wait><esc><wait><enter><wait>",
       "/install/vmlinuz ",
       "preseed/file=/floppy/preseed.cfg ",
       "debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
@@ -29,11 +29,11 @@
       "keyboard-configuration/variant=USA console-setup/ask_detect=false ",
       "initrd=/install/initrd.gz -- <enter><wait><enter>"
     ],
-    "shutdown_command": "shutdown -P now",
+    "shutdown_command": "echo 'packer' | sudo -S -E shutdown -P now",
     "remote_type": "esx5",
     "remote_port": "22",
     "remote_host": "{{user `ESXI_IP`}}",
-    "remote_datastore": "datastore1",
+    "remote_datastore": "images",
     "remote_username": "root",
     "remote_password": "{{user `ESXI_PASSWORD`}}",
     "vmx_data": {
