@@ -32,7 +32,7 @@
     "shutdown_command": "shutdown -P now",
     "remote_type": "esx5",
     "remote_port": "22",
-    "remote_host": "{{user `ESXI_PASSWORD`}}",
+    "remote_host": "{{user `ESXI_IP`}}",
     "remote_datastore": "datastore1",
     "remote_username": "root",
     "remote_password": "{{user `ESXI_PASSWORD`}}",
