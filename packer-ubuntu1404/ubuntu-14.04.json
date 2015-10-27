@@ -1,7 +1,7 @@
 {   
   "variables": {
     "ESXI_USER": "",
-    "ESXI_PASSWORD": "",
+    "ESXI_PASS": "",
     "ESXI_IP": ""
   },
   "builders": [{
@@ -36,7 +36,7 @@
     "remote_host": "{{user `ESXI_IP`}}",
     "remote_datastore": "datastore1",
     "remote_username": "{{user `ESXI_USER`}}",
-    "remote_password": "{{user `ESXI_PASSWORD`}}",
+    "remote_password": "{{user `ESXI_PASS`}}",
     "vmx_data": {
       "memsize": "1024",
       "numvcpus": "2",
