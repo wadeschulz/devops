@@ -1,7 +1,8 @@
 {   
   "variables": {
-    "ESXI_PASSWORD": "{{env `ESXI_PASSWORD`}}",
-    "ESXI_IP": "{{env `ESXI_IP`}}"
+    "ESXI_USER": "",
+    "ESXI_PASSWORD": "",
+    "ESXI_IP": ""
   },
   "builders": [{
     "type": "vmware-iso",
@@ -34,7 +35,7 @@
     "remote_port": "22",
     "remote_host": "{{user `ESXI_IP`}}",
     "remote_datastore": "datastore1",
-    "remote_username": "root",
+    "remote_username": "{{user `ESXI_USER`}}",
     "remote_password": "{{user `ESXI_PASSWORD`}}",
     "vmx_data": {
       "memsize": "1024",
