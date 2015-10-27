@@ -46,6 +46,14 @@
       "ethernet0.addressType": "generated",
       "ethernet0.connectionType": "bridged",
       "ethernet0.generatedAddressOffset": "0",
+      "ethernet0.wakeOnPcktRcv": "FALSE",
+      "ethernet1.present": "TRUE",
+      "ethernet1.startConnected": "TRUE",
+      "ethernet1.virtualDev": "e1000",
+      "ethernet1.networkName": "Host Network",
+      "ethernet0.addressType": "generated",
+      "ethernet0.connectionType": "bridged",
+      "ethernet0.generatedAddressOffset": "0",
       "ethernet0.wakeOnPcktRcv": "FALSE"
     }
   }]
