@@ -31,7 +31,8 @@
       "initrd=/install/initrd.gz -- <enter><wait><enter>"
     ],
     "shutdown_command": "echo 'packer' | sudo -S -E shutdown -P now",
-    "step_configure_vnc.go":"5901",
+    "vnc_port_min":"5500",
+    "vnc_port_max":"6200",
     "remote_type": "esx5",
     "remote_port": "22",
     "remote_host": "{{user `ESXI_IP`}}",
