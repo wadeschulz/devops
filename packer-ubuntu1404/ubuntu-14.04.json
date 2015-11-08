@@ -31,8 +31,6 @@
       "initrd=/install/initrd.gz -- <enter><wait><enter>"
     ],
     "shutdown_command": "echo 'packer' | sudo -S -E shutdown -P now",
-    "vnc_port_min":"5500",
-    "vnc_port_max":"6200",
     "remote_type": "esx5",
     "remote_port": "22",
     "remote_host": "{{user `ESXI_IP`}}",
@@ -54,10 +52,10 @@
       "ethernet1.startConnected": "TRUE",
       "ethernet1.virtualDev": "e1000",
       "ethernet1.networkName": "Host Network",
-      "ethernet0.addressType": "generated",
-      "ethernet0.connectionType": "bridged",
-      "ethernet0.generatedAddressOffset": "0",
-      "ethernet0.wakeOnPcktRcv": "FALSE"
+      "ethernet1.addressType": "generated",
+      "ethernet1.connectionType": "bridged",
+      "ethernet1.generatedAddressOffset": "0",
+      "ethernet1.wakeOnPcktRcv": "FALSE"
     }
   }]
 }
