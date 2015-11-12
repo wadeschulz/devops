@@ -1,7 +1,8 @@
 {   
   "variables": {
-    "ESXI_PASSWORD": "{{env `ESXI_PASSWORD`}}",
-    "ESXI_IP": "{{env `ESXI_IP`}}"
+    "ESXI_USER": "",
+    "ESXI_PASS": "",
+    "ESXI_IP": ""
   },
   "builders": [{
     "type": "vmware-iso",
@@ -34,8 +35,8 @@
     "remote_port": "22",
     "remote_host": "{{user `ESXI_IP`}}",
     "remote_datastore": "datastore1",
-    "remote_username": "root",
-    "remote_password": "{{user `ESXI_PASSWORD`}}",
+    "remote_username": "{{user `ESXI_USER`}}",
+    "remote_password": "{{user `ESXI_PASS`}}",
     "vmx_data": {
       "memsize": "1024",
       "numvcpus": "2",
@@ -46,7 +47,15 @@
       "ethernet0.addressType": "generated",
       "ethernet0.connectionType": "bridged",
       "ethernet0.generatedAddressOffset": "0",
-      "ethernet0.wakeOnPcktRcv": "FALSE"
+      "ethernet0.wakeOnPcktRcv": "FALSE",
+      "ethernet1.present": "TRUE",
+      "ethernet1.startConnected": "TRUE",
+      "ethernet1.virtualDev": "e1000",
+      "ethernet1.networkName": "Host Network",
+      "ethernet1.addressType": "generated",
+      "ethernet1.connectionType": "bridged",
+      "ethernet1.generatedAddressOffset": "0",
+      "ethernet1.wakeOnPcktRcv": "FALSE"
     }
   }]
 }
