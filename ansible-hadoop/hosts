@@ -1,7 +1,7 @@
 # NB: The hosts_map is using the variable from this file.
 [ambari_server]
-10.71.30.38
+hdpambari
 
 [ambari_agents]
-10.71.30.38
-10.71.30.57
+hdpambari
+hdpagent
