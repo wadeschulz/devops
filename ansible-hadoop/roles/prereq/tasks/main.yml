@@ -1,0 +1,12 @@
+---
+# Not required but nice to have
+  - name : install screen
+    yum : name=screen state=latest
+  
+# Create Hadoop Directory structure
+  - name : create directories
+    file : dest={{ hdp['dfs_datanode_data_dir'] }} state=directory
+    file : dest={{ hdp['dfs_namenode_checkpoint_dir'] }} state=directory
+    file : dest={{ hdp['dfs_namenode_name_dir'] }} state=directory
+    file : dest={{ hdp['yarn_nodemanager_local_dirs'] }} state=directory
+    file : dest={{ hdp['yarn_nodemanager_log_dirs'] }} state=directory

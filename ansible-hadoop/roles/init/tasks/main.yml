@@ -1,0 +1,9 @@
+---
+  - name : Update packages
+    yum: name=* state=latest
+
+  - name : install selinux python lib
+    yum: name=libselinux-python state=latest
+
+  - name : add SSH public key
+    authorized_key: user=root key=https://github.com/wadeschulz.keys
