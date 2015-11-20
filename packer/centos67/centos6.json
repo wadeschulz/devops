@@ -1,0 +1,45 @@
+{   
+  "variables": {
+    "ESXI_USER": "",
+    "ESXI_PASS": "",
+    "ESXI_IP": ""
+  },
+  "builders": [{
+    "type": "vmware-iso",
+    "guest_os_type": "RedHat_64",
+    "iso_url": "http://centos.mirrors.hoobly.com/6.7/isos/x86_64/CentOS-6.7-x86_64-minimal.iso",
+    "iso_checksum": "9381a24b8bee2fed0c26896141a64b69",
+    "iso_checksum_type": "md5",
+    "disk_size": "15000",
+    "ssh_username": "packer",
+    "ssh_password": "packer",
+    "ssh_wait_timeout": "1200s",
+    "floppy_files": [
+      "preseed.cfg"
+    ],
+    "headless": "true",
+    "boot_wait": "10s",
+    "boot_command": [
+      "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/kickstart.cfg<enter><wait>"
+    ],
+    "shutdown_command": "echo 'packer' | sudo -S -E shutdown -P now",
+    "remote_type": "esx5",
+    "remote_port": "22",
+    "remote_host": "{{user `ESXI_IP`}}",
+    "remote_datastore": "datastore1",
+    "remote_username": "{{user `ESXI_USER`}}",
+    "remote_password": "{{user `ESXI_PASS`}}",
+    "vmx_data": {
+      "memsize": "1024",
+      "numvcpus": "2",
+      "ethernet0.present": "TRUE",
+      "ethernet0.startConnected": "TRUE",
+      "ethernet0.virtualDev": "e1000",
+      "ethernet0.networkName": "Host Network",
+      "ethernet0.addressType": "generated",
+      "ethernet0.connectionType": "bridged",
+      "ethernet0.generatedAddressOffset": "0",
+      "ethernet0.wakeOnPcktRcv": "FALSE",
+    }
+  }]
+}
