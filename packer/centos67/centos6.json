@@ -14,9 +14,6 @@
     "ssh_username": "packer",
     "ssh_password": "packer",
     "ssh_wait_timeout": "1200s",
-    "floppy_files": [
-      "preseed.cfg"
-    ],
     "headless": "true",
     "boot_wait": "10s",
     "boot_command": [
