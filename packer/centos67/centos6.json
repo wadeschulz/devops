@@ -36,7 +36,7 @@
       "ethernet0.addressType": "generated",
       "ethernet0.connectionType": "bridged",
       "ethernet0.generatedAddressOffset": "0",
-      "ethernet0.wakeOnPcktRcv": "FALSE",
+      "ethernet0.wakeOnPcktRcv": "FALSE"
     }
   }]
 }
