@@ -17,11 +17,13 @@
     "ssh_username": "root",
     "ssh_password": "packer",
     "ssh_wait_timeout": "1200s",
-    "http_directory": "./http",
+    "floppy_files":[
+      "ks.cfg"
+    ],
     "headless": "true",
     "boot_wait": "10s",
     "boot_command": [
-      "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/kickstart.cfg<enter><wait>"
+      "<tab> text ks=hd:fd0:/ks.cfg <enter><wait>"
     ],
     "shutdown_command": "shutdown -h now",
     "remote_type": "esx5",
