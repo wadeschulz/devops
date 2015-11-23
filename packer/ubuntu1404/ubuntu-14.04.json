@@ -2,7 +2,9 @@
   "variables": {
     "ESXI_USER": "",
     "ESXI_PASS": "",
-    "ESXI_IP": ""
+    "ESXI_IP": "",
+    "DATASTORE": "",
+    "VM_NAME": ""
   },
   "builders": [{
     "type": "vmware-iso",
@@ -10,6 +12,7 @@
     "iso_url": "http://releases.ubuntu.com/14.04/ubuntu-14.04.3-server-amd64.iso",
     "iso_checksum": "0501c446929f713eb162ae2088d8dc8b6426224a",
     "iso_checksum_type": "sha1",
+    "name": "{{user `VM_NAME`}}",
     "disk_size": "10000",
     "ssh_username": "packer",
     "ssh_password": "packer",
@@ -34,7 +37,7 @@
     "remote_type": "esx5",
     "remote_port": "22",
     "remote_host": "{{user `ESXI_IP`}}",
-    "remote_datastore": "datastore1",
+    "remote_datastore": "{{user `DATASTORE`}}",
     "remote_username": "{{user `ESXI_USER`}}",
     "remote_password": "{{user `ESXI_PASS`}}",
     "vmx_data": {
@@ -43,19 +46,11 @@
       "ethernet0.present": "TRUE",
       "ethernet0.startConnected": "TRUE",
       "ethernet0.virtualDev": "e1000",
-      "ethernet0.networkName": "VM Network",
+      "ethernet0.networkName": "Host Network",
       "ethernet0.addressType": "generated",
       "ethernet0.connectionType": "bridged",
       "ethernet0.generatedAddressOffset": "0",
-      "ethernet0.wakeOnPcktRcv": "FALSE",
-      "ethernet1.present": "TRUE",
-      "ethernet1.startConnected": "TRUE",
-      "ethernet1.virtualDev": "e1000",
-      "ethernet1.networkName": "Host Network",
-      "ethernet1.addressType": "generated",
-      "ethernet1.connectionType": "bridged",
-      "ethernet1.generatedAddressOffset": "0",
-      "ethernet1.wakeOnPcktRcv": "FALSE"
+      "ethernet0.wakeOnPcktRcv": "FALSE"
     }
   }]
 }
