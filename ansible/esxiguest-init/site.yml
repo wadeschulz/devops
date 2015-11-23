@@ -1,6 +1,9 @@
 ---
 - hosts: newservers
   user : root
+  vars:
+   - root_password:''
+   - deploy_password:''
 
   roles:
    - init
