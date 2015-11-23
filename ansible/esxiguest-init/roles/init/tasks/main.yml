@@ -1,29 +1,31 @@
 ---
-  - name : Update packages
+  - name : Update yum packages
     yum: name=* state=latest
     when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
 
   - name : install EPEL
-    when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
-    yum: name=$item state=latest
-    with_items:
-     - epel-release
-     - fail2ban
+    yum: name=epel-release state=latest
     when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
 
-  - name : Update packages
+  - name : install fail2ban
+    yum: name=fail2ban state=latest
+    when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+
+  - name : Update apt packages
     apt: upgrade=dist update_cache=yes
-    when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+    when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
-  - name : install EPEL
-    when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+  - name : install fail2ban
     apt: name=$item state=latest
     with_items:
      - fail2ban
     when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
   - name : add deployment user
-    action: user name=deploy
+    action: user name=deploy password=$deploy_password
+
+  - name: Change root password
+    action: user name=root password=$root_password
 
   - name : add SSH keys to deploy user
     authorized_key: user=deploy key=https://github.com/wadeschulz.keys
@@ -36,26 +38,9 @@
 
   - name: Disallow root SSH access
     action: lineinfile dest=/etc/ssh/sshd_config regexp="^PermitRootLogin" line="PermitRootLogin no" state=present
-    notify: Restart sshd
 
   - name: Disallow password authentication
     action: lineinfile dest=/etc/ssh/sshd_config regexp="^PasswordAuthentication" line="PasswordAuthentication no" state=present
-    notify: Restart sshd
 
-  - name: Remove sudo group rights
-    action: lineinfile dest=/etc/sudoers regexp="^%sudo" state=absent
-
-  - name: Add deploy user to sudoers
-    action: lineinfile dest=/etc/sudoers regexp="deploy ALL" line="deploy ALL=(ALL) ALL" state=present
-
-  - name: Disallow root SSH access
-    action: lineinfile dest=/etc/ssh/sshd_config regexp="^PermitRootLogin" line="PermitRootLogin no" state=present
-    notify: Restart sshd
-
-  - name: Disallow password authentication
-    action: lineinfile dest=/etc/ssh/sshd_config regexp="^PasswordAuthentication" line="PasswordAuthentication no" state=present
-    notify: Restart sshd
-
-  handlers:
   - name: Restart sshd
     action: service name=sshd state=restarted
