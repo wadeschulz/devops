@@ -1,0 +1,7 @@
+---
+- hosts: newservers
+  user : root
+
+  roles:
+   - init
+   - peru.vmwaretools
