@@ -2,28 +2,32 @@
   "variables": {
     "ESXI_USER": "",
     "ESXI_PASS": "",
-    "ESXI_IP": ""
+    "ESXI_IP": "",
+    "DATASTORE": "",
+    "VM_NAME": ""
   },
   "builders": [{
     "type": "vmware-iso",
-    "guest_os_type": "RedHat_64",
-    "iso_url": "http://centos.mirrors.hoobly.com/6.7/isos/x86_64/CentOS-6.7-x86_64-minimal.iso",
-    "iso_checksum": "9381a24b8bee2fed0c26896141a64b69",
-    "iso_checksum_type": "md5",
+    "guest_os_type": "centos-64",
+    "iso_url": "http://linux.cc.lehigh.edu/centos/6.7/isos/x86_64/CentOS-6.7-x86_64-minimal.iso",
+    "iso_checksum": "2ed5ea551dffc3e4b82847b3cee1f6cd748e8071",
+    "iso_checksum_type": "sha1",
+    "name": "{{user `VM_NAME`}}",
     "disk_size": "15000",
-    "ssh_username": "packer",
+    "ssh_username": "root",
     "ssh_password": "packer",
     "ssh_wait_timeout": "1200s",
+    "http_directory": "./http",
     "headless": "true",
     "boot_wait": "10s",
     "boot_command": [
       "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/kickstart.cfg<enter><wait>"
     ],
-    "shutdown_command": "echo 'packer' | sudo -S -E shutdown -P now",
+    "shutdown_command": "shutdown -h now",
     "remote_type": "esx5",
     "remote_port": "22",
     "remote_host": "{{user `ESXI_IP`}}",
-    "remote_datastore": "datastore1",
+    "remote_datastore": "{{user `DATASTORE`}}",
     "remote_username": "{{user `ESXI_USER`}}",
     "remote_password": "{{user `ESXI_PASS`}}",
     "vmx_data": {
