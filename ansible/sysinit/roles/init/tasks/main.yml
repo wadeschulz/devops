@@ -1,0 +1,50 @@
+---
+  - name : Update packages
+    yum: name=* state=latest
+
+  - name : install EPEL
+    yum: name=epel-release state=latest
+
+  - name : install selinux python lib
+    yum: name=libselinux-python state=latest
+
+  - name : install fail2ban
+    yum: name=fail2ban state=latest
+
+  - name : add deployment user
+    action: user name=deploy
+
+  - name : add SSH keys to deploy user
+    authorized_key: user=deploy key=https://github.com/wadeschulz.keys
+
+  - name: Remove sudo group rights
+    action: lineinfile dest=/etc/sudoers regexp="^%sudo" state=absent
+
+  - name: Add deploy user to sudoers
+    action: lineinfile dest=/etc/sudoers regexp="deploy ALL" line="deploy ALL=(ALL) ALL" state=present
+
+  - name: Disallow root SSH access
+    action: lineinfile dest=/etc/ssh/sshd_config regexp="^PermitRootLogin" line="PermitRootLogin no" state=present
+    notify: Restart sshd
+
+  - name: Disallow password authentication
+    action: lineinfile dest=/etc/ssh/sshd_config regexp="^PasswordAuthentication" line="PasswordAuthentication no" state=present
+    notify: Restart sshd
+
+  - name: Remove sudo group rights
+    action: lineinfile dest=/etc/sudoers regexp="^%sudo" state=absent
+
+  - name: Add deploy user to sudoers
+    action: lineinfile dest=/etc/sudoers regexp="deploy ALL" line="deploy ALL=(ALL) ALL" state=present
+
+  - name: Disallow root SSH access
+    action: lineinfile dest=/etc/ssh/sshd_config regexp="^PermitRootLogin" line="PermitRootLogin no" state=present
+    notify: Restart sshd
+
+  - name: Disallow password authentication
+    action: lineinfile dest=/etc/ssh/sshd_config regexp="^PasswordAuthentication" line="PasswordAuthentication no" state=present
+    notify: Restart sshd
+
+  handlers:
+  - name: Restart sshd
+    action: service name=sshd state=restarted

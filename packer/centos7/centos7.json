@@ -1,0 +1,48 @@
+{   
+  "variables": {
+    "ESXI_USER": "",
+    "ESXI_PASS": "",
+    "ESXI_IP": "",
+    "DATASTORE": "",
+    "VM_NAME": ""
+  },
+  "builders": [{
+    "type": "vmware-iso",
+    "guest_os_type": "centos-64",
+    "iso_url": "http://bay.uchicago.edu/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1503-01.iso",
+    "iso_checksum": "7c1e34e95c991175290d704dbdcc6531774cbecb",
+    "iso_checksum_type": "sha1",
+    "name": "{{user `VM_NAME`}}",
+    "disk_size": "15000",
+    "ssh_username": "root",
+    "ssh_password": "packer",
+    "ssh_wait_timeout": "1200s",
+    "floppy_files":[
+      "ks.cfg"
+    ],
+    "headless": "true",
+    "boot_wait": "10s",
+    "boot_command": [
+      "<tab> text ks=hd:fd0:/ks.cfg <enter><wait>"
+    ],
+    "shutdown_command": "shutdown -h now",
+    "remote_type": "esx5",
+    "remote_port": "22",
+    "remote_host": "{{user `ESXI_IP`}}",
+    "remote_datastore": "{{user `DATASTORE`}}",
+    "remote_username": "{{user `ESXI_USER`}}",
+    "remote_password": "{{user `ESXI_PASS`}}",
+    "vmx_data": {
+      "memsize": "1024",
+      "numvcpus": "2",
+      "ethernet0.present": "TRUE",
+      "ethernet0.startConnected": "TRUE",
+      "ethernet0.virtualDev": "e1000",
+      "ethernet0.networkName": "Host Network",
+      "ethernet0.addressType": "generated",
+      "ethernet0.connectionType": "bridged",
+      "ethernet0.generatedAddressOffset": "0",
+      "ethernet0.wakeOnPcktRcv": "FALSE"
+    }
+  }]
+}
