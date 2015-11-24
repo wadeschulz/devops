@@ -1,0 +1,12 @@
+---
+  - name : Update yum packages
+    yum: name=* state=latest
+
+  - name: add docker repository
+    template: src=docker.j2 dest=/etc/yum.repos.d/docker.repo
+
+  - name: install docker engine
+    action: yum name=docker-engine state=present
+
+  - name: start docker service
+    service: name=docker state=started
