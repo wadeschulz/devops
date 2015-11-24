@@ -11,21 +11,23 @@
     yum: name=fail2ban state=latest
     when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
 
+  - name: add universe repository
+    apt_repository: repo='deb http://archive.ubuntu.com/ubuntu trusty universe' state=present
+    when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
   - name : Update apt packages
     apt: upgrade=dist update_cache=yes
     when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
   - name : install fail2ban
-    apt: name=$item state=latest
-    with_items:
-     - fail2ban
+    apt: name=fail2ban state=latest
     when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
   - name : add deployment user
-    action: user name=deploy password=$deploy_password
+    action: user name=deploy password={{deploy_password}}
 
   - name: Change root password
-    action: user name=root password=$root_password
+    action: user name=root password={{root_password}}
 
   - name : add SSH keys to deploy user
     authorized_key: user=deploy key=https://github.com/wadeschulz.keys
@@ -44,3 +46,8 @@
 
   - name: Restart sshd
     action: service name=sshd state=restarted
+    when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+
+  - name: Restart ssh for ubuntu
+    action: service name=ssh state=restarted
+    when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'

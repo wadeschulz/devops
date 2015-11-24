@@ -44,5 +44,9 @@
       "ethernet0.generatedAddressOffset": "0",
       "ethernet0.wakeOnPcktRcv": "FALSE"
     }
+  }],
+  "provisioners":[{
+    "type": "shell",
+    "inline": ["yum -y install open-vm-tools"]
   }]
 }
