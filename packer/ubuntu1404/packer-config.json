@@ -14,7 +14,7 @@
     "iso_checksum_type": "sha1",
     "name": "{{user `VM_NAME`}}",
     "disk_size": "10000",
-    "ssh_username": "packer",
+    "ssh_username": "root",
     "ssh_password": "packer",
     "ssh_wait_timeout": "1200s",
     "floppy_files": [
@@ -33,7 +33,7 @@
       "keyboard-configuration/variant=USA console-setup/ask_detect=false ",
       "initrd=/install/initrd.gz -- <enter><wait><enter>"
     ],
-    "shutdown_command": "echo 'packer' | sudo -S -E shutdown -P now",
+    "shutdown_command": "shutdown -P now",
     "remote_type": "esx5",
     "remote_port": "22",
     "remote_host": "{{user `ESXI_IP`}}",
@@ -52,5 +52,9 @@
       "ethernet0.generatedAddressOffset": "0",
       "ethernet0.wakeOnPcktRcv": "FALSE"
     }
+  }],
+  "provisioners":[{
+    "type": "shell",
+    "inline": ["apt-get install -yy open-vm-tools"]
   }]
 }
