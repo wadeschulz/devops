@@ -1,0 +1,7 @@
+---
+- hosts: docker_daemons
+  user: deploy
+  sudo: yes
+
+  roles:
+   - docker
