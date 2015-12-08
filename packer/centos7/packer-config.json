@@ -33,8 +33,8 @@
     "remote_username": "{{user `ESXI_USER`}}",
     "remote_password": "{{user `ESXI_PASS`}}",
     "vmx_data": {
-      "memsize": "1024",
-      "numvcpus": "2",
+      "memsize": "12024",
+      "numvcpus": "6",
       "ethernet0.present": "TRUE",
       "ethernet0.startConnected": "TRUE",
       "ethernet0.virtualDev": "e1000",

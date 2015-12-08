@@ -47,6 +47,9 @@
   }],
   "provisioners":[{
     "type": "shell",
-    "inline": ["yum -y install open-vm-tools"]
+    "inline": [
+	"yum -y install epel-release",
+	"yum -y install open-vm-tools"
+     ]
   }]
 }
