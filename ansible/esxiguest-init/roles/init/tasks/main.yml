@@ -32,6 +32,10 @@
   - name : add SSH keys to deploy user
     authorized_key: user=deploy key=https://github.com/wadeschulz.keys
 
+  - name : fix for selinux on key permissions
+    cmd: sudo restorecon -R -v /home/deploy/.ssh
+    when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
   - name: Remove sudo group rights
     action: lineinfile dest=/etc/sudoers regexp="^%sudo" state=absent
 
