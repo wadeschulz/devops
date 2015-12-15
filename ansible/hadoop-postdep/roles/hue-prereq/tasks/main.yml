@@ -1,0 +1,6 @@
+--- 
+ - name : install python 2.6
+   yum: name=python26 state=latest
+
+ - name : install hue
+   yum: name=hue state=latest

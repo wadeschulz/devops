@@ -1,4 +1,11 @@
 - hosts: sqoop_clients
   user : root
+  vars_files:
+   - vars/sqljdbc.yml
   roles:
-   - sql-jdbc
+   - sqljdbc
+
+- hosts: hue_server
+  user : root
+  roles:
+   - hue-prereq
