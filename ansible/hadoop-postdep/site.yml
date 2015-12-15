@@ -1,0 +1,4 @@
+- hosts: sqoop_clients
+  user : root
+  roles:
+   - sql-jdbc

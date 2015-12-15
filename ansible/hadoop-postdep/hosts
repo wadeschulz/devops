@@ -1,0 +1,3 @@
+# NB: The hosts_map is using the variable from this file.
+[sqoop_clients]
+hdpclient
