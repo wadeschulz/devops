@@ -1,9 +1,9 @@
 --- 
  - name : download SQL JDBC
-   get_url : url={{ sqljdbc.url }} dest={{ home_dir }}/{{ sqljdbc.archive }}
+   get_url: url={{ sqljdbc.url }} dest={{ home_dir }}/{{ sqljdbc.archive }}
 
 - name : unarchive the JDBC driver
-  unarchive : src={{ home_dir }}/{{ sqljdbc.archive }} dest={{ home_dir }}
+  unarchive: src={{ home_dir }}/{{ sqljdbc.archive }} dest={{ home_dir }} copy=no
 
 - name : move JDBC driver to sqoop lib path
-  command : mv {{ home_dir }}/sqljdbc_4.0/enu/sqljdbc4.jar {{ sqoop.lib_dir }}/sqljdbc4.jar
+  command: mv {{ home_dir }}/sqljdbc_4.0/enu/sqljdbc4.jar {{ sqoop.lib_dir }}
