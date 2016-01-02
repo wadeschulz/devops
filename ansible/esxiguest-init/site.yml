@@ -1,6 +1,4 @@
 ---
-   # crypted passwords: 
-   # python -c "from passlib.hash import sha512_crypt; import getpass; print sha512_crypt.encrypt(getpass.getpass())"
 - hosts: newservers
   user: root
   vars_prompt:
@@ -9,16 +7,10 @@
      private: yes    
      encrypt: "md5_crypt" #need to have python-passlib installed in local machine before we can use it    
      confirm: yes    
-     salt_size: 7
    - name: "deploy_password"    
      prompt: "Enter a password for the deploy user"    
      private: yes    
      encrypt: "md5_crypt" #need to have python-passlib installed in local machine before we can use it    
-     confirm: yes    
-     salt_size: 7
-  vars:
-    root_password: "$6$rounds=656000$ld9BAVBdMzUe3nrP$YfpnKbc6ouCS/4gfIu.imoLnwsJn3Kvd.dSR2aofVRPIx5LWjTAOFTXc.H7EouF/yMBU6AM71tYnKEl.nIgXk0"
-    deploy_password: "$6$rounds=656000$J8JDAGDaRDtyAPxs$hQMdzRPSN9juFKmo/tmiwQqiUGnr8VnqrX57t/B8Oja0LlC4837uDRicKfdszIRH3gB11QjX9mQ9OLKJL2Myg."
-
+     confirm: yes
   roles:
    - init
