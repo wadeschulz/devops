@@ -10,6 +10,8 @@ datastore = raw_input('Datastore name: ')
 vm_base_name = raw_input('VM/Build name: ')
 num_instances = int(raw_input('Number instances: '))
 
+os.chdir(build_type)
+
 for i in range(1, num_instances+1):
 	vm_name = vm_base_name + "-" + str(i)
 	packer_ip = " -var 'ESXI_IP=" + esxi_server + "'"
@@ -17,8 +19,6 @@ for i in range(1, num_instances+1):
 	packer_pass = " -var 'ESXI_PASS=" + esxi_password + "'"
 	packer_datastore = " -var 'DATASTORE=" + datastore + "'"
 	packer_vm_name = " -var 'VM_NAME=" + vm_name + "'"
-
-	os.chdir(build_type)
 
 	os.system("/opt/packer/packer build" + packer_ip + packer_user + packer_pass + packer_datastore + packer_vm_name + " packer-config.json")
 
