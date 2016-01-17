@@ -1,0 +1,11 @@
+---
+- hosts: all
+  user: deploy
+  sudo: yes
+
+  roles:
+   - docker
+
+  vars:
+   - docker_users:
+     - deploy
