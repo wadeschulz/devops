@@ -9,4 +9,4 @@
     file: state=directory recurse=yes path=/mnt/elastic/config
 
   - name : copy es config template
-    template: src=/templates/elasticsearch.j2 dest=/mnt/elastic/elasticsearch.yml
+    template: src=elasticsearch.j2 dest=/mnt/elastic/elasticsearch.yml
