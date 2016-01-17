@@ -3,7 +3,7 @@
     yum: name=* state=latest
 
   - name : Install docker/ansible dependencies
-    yum: name=docker-py state=latest
+    yum: name=python-docker-py state=latest
 
   - name: add docker repository
     template: src=docker.j2 dest=/etc/yum.repos.d/docker.repo
