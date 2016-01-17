@@ -10,3 +10,19 @@
 
   - name : copy es config template
     template: src=elasticsearch.j2 dest=/mnt/elastic/elasticsearch.yml
+
+  - name: elasticsearch container
+    docker:
+      name: esnode
+      image: elasticsearch
+      state: started
+      expose:
+        - 9200
+        - 9300
+      ports:
+        - 9200
+        - 9300
+      volumes:
+        - /mnt/elastic/data:/usr/share/elasticsearch/data
+        - /mnt/elastic/logs:/usr/share/elasticsearch/logs
+        - /mnt/elastic/config:/usr/share/elasticsearch/config
