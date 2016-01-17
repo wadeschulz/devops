@@ -6,7 +6,11 @@
 
   roles:
    - docker
+   - elastic
 
   vars:
    - docker_users:
      - deploy
+   - cluster_name: darkstar
+   - master1: 10.71.30.33
+   - master2: 10.71.30.35

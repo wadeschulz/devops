@@ -1,0 +1,40 @@
+---
+#network:
+#  host: 10.0.0.4
+path:
+  logs: /usr/share/elasticsearch/logs
+  data: /usr/share/elasticsearch/data
+cluster:
+  name: "{{ cluster_name }}"
+node:
+  #name: <NAME OF YOUR NODE>
+  ## work as all roles
+  master: true
+  data: true
+  ## data node only
+  #master: false
+  #data: true
+  ## master node only
+  #master: true
+  #data: false
+  ## search balancer
+  #master: false
+  #data: false
+index: 
+  number_of_shards: 5
+  number_of_replicas: 3
+bootstrap:
+  # ElasticSearch performs poorly when JVM starts swapping: you should ensure that
+  # it _never_ swaps.
+  #
+  # Set this property to true to lock the memory:
+  #
+  mlockall: true
+discovery:
+  zen:
+    minimum_master_nodes: 2
+    ping:
+      multicast:
+        enabled: false
+      unicast:
+        hosts: ["{{ master1 }}", "{{ master2 }}"]

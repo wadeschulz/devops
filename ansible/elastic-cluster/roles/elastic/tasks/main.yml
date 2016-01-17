@@ -1,0 +1,12 @@
+---
+  - name : create data directory
+    file: state=directory recurse=yes path=/mnt/elastic/data
+
+  - name : create log directory
+    file: state=directory recurse=yes path=/mnt/elastic/logs
+
+  - name : create config directory
+    file: state=directory recurse=yes path=/mnt/elastic/config
+
+  - name : copy es config template
+    template: src=/templates/elasticsearch.j2 dest=/mnt/elastic/elasticsearch.yml
