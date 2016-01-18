@@ -1,7 +1,8 @@
 ---
 network:
-  bind_host: 0.0.0.0
-  host: "{{ ansible_default_ipv4.address }}"
+  bind_host: {{ ansible_default_ipv4.address }}
+  publish_host: {{ ansible_default_ipv4.address }}
+  host: {{ ansible_default_ipv4.address }}
 path:
   logs: /usr/share/elasticsearch/logs
   data: /usr/share/elasticsearch/data
