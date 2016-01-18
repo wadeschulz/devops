@@ -9,18 +9,24 @@ cluster:
   name: {{ cluster_name }}
 node:
   #name: <NAME OF YOUR NODE>
+  # select node role
+  {% if 'data_nodes' in group_names %}
+  ## data node only
+  master: false
+  data: true
+  {% elif 'master_nodes' in group_names %}
+  ## master node only
+  master: true
+  data: false
+  {% elif 'client_nodes' in group_names %}
+  ## search balancer
+  master: false
+  data: false
+  {% else %}
   ## work as all roles
   master: true
   data: true
-  ## data node only
-  #master: false
-  #data: true
-  ## master node only
-  #master: true
-  #data: false
-  ## search balancer
-  #master: false
-  #data: false
+  {% endif %}
 index: 
   number_of_shards: 5
   number_of_replicas: 3
