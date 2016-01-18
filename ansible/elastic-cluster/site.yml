@@ -12,7 +12,5 @@
    - docker_users:
      - deploy
    - cluster_name: darkstar
-   - masters:
-     - 127.0.0.1
    # max heap size per container should be 30.5g or 1/2 avail mem, whichever is smaller
-   - es_heap_size: 2g
+   - es_heap_size: 3g
