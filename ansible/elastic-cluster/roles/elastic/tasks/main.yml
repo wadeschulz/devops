@@ -1,15 +1,15 @@
 ---
   - name : create data directory
-    file: state=directory recurse=yes path=/mnt/elastic/data
+    file: state=directory recurse=yes path=/mnt/elastic/data owner=deploy group=docker mode=0774
 
   - name : create log directory
-    file: state=directory recurse=yes path=/mnt/elastic/logs
+    file: state=directory recurse=yes path=/mnt/elastic/logs owner=deploy group=docker mode=0774
 
   - name : create config directory
-    file: state=directory recurse=yes path=/mnt/elastic/config
+    file: state=directory recurse=yes path=/mnt/elastic/config owner=deploy group=docker mode=0774
 
   - name : copy es config template
-    template: src=elasticsearch.j2 dest=/mnt/elastic/config/elasticsearch.yml
+    template: src=elasticsearch.j2 dest=/mnt/elastic/config/elasticsearch.yml owner=deploy group=docker mode=0774
 
   - name: elasticsearch container
     docker:
