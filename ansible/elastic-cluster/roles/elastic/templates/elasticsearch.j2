@@ -51,11 +51,11 @@ discovery:
         hosts:
         {% for host in groups['master_nodes'] %}
         {% if host != {{ ansible_default_ipv4.address }} %}
-          - {{ hostvars[host]['ansible_default_ipv4']['address'] }}
+          - "{{ hostvars[host]['ansible_default_ipv4']['address'] }}"
         {% endif %}
         {% endfor %}
         {% for host in groups['masterdata_nodes'] %}
         {% if host != {{ ansible_default_ipv4.address }} %}
-          - {{ hostvars[host]['ansible_default_ipv4']['address'] }}
+          - "{{ hostvars[host]['ansible_default_ipv4']['address'] }}"
         {% endif %}
         {% endfor %}
