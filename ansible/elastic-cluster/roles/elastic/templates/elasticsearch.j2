@@ -15,11 +15,11 @@ node:
   ## data node only
   master: false
   data: true
-  {% else if 'master_nodes' in group_names %}
+  {% elseif 'master_nodes' in group_names %}
   ## master node only
   master: true
   data: false
-  {% else if 'client_nodes' in group_names %}
+  {% elseif 'client_nodes' in group_names %}
   ## search balancer
   master: false
   data: false
