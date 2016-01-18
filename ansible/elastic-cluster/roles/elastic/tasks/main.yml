@@ -23,8 +23,8 @@
       image: elasticsearch
       state: started
       expose:
-        - 9200
-        - 9300
+        - 9200:9200
+        - 9300:9300
       ports:
         - 9200:9200
         - 9300:9300
