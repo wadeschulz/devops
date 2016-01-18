@@ -17,6 +17,9 @@
   - name : copy es config template
     template: src=elasticsearch.j2 dest=/mnt/elastic/config/elasticsearch.yml owner=elasticsearch group=docker mode=0774
 
+  - name : copy es logging template
+    template: src=logging.j2 dest=/mnt/elastic/config/logging.yml owner=elasticsearch group=docker mode=0774
+
   - name: elasticsearch container
     docker:
       name: esnode
