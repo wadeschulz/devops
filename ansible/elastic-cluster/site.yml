@@ -14,3 +14,4 @@
    - cluster_name: darkstar
    - master1: 10.71.30.33
    - master2: 10.71.30.35
+   - master3: 10.71.30.49

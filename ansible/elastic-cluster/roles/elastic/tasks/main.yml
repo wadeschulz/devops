@@ -25,12 +25,9 @@
       name: esnode
       image: elasticsearch
       state: started
-      expose:
-        - 9200:9200
-        - 9300:9300
       ports:
-        - 9200:9200
-        - 9300:9300
+        - 9200-9299:9200-9299
+        - 9300-9400:9300-9400
       volumes:
         - /mnt/elastic/data:/usr/share/elasticsearch/data
         - /mnt/elastic/logs:/usr/share/elasticsearch/logs

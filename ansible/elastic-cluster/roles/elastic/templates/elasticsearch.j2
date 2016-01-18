@@ -2,12 +2,11 @@
 network:
   bind_host: 0.0.0.0
   publish_host: {{ ansible_default_ipv4.address }}
-  host: {{ ansible_default_ipv4.address }}
 path:
   logs: /usr/share/elasticsearch/logs
   data: /usr/share/elasticsearch/data
 cluster:
-  name: "{{ cluster_name }}"
+  name: {{ cluster_name }}
 node:
   #name: <NAME OF YOUR NODE>
   ## work as all roles
@@ -34,9 +33,11 @@ bootstrap:
   mlockall: true
 discovery:
   zen:
-    minimum_master_nodes: 2
+    minimum_master_nodes: 3
+    ping_timeout: 60s
+    ping_retries: 4
     ping:
       multicast:
         enabled: false
       unicast:
-        hosts: ["{{ master1 }}", "{{ master2 }}"]
+        hosts: [{{ master1 }}, {{ master2 }}, {{ master3 }}]
