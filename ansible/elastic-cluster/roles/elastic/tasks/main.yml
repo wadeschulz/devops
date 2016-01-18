@@ -34,4 +34,4 @@
         - /mnt/elastic/config:/usr/share/elasticsearch/config
       env:
         # should set max container heap size to 30.5g so not to hit JVM pointer size change
-        - ES_HEAP_SIZE: {{ es_heap_size }}
+        - ES_HEAP_SIZE: "{{ es_heap_size }}"
