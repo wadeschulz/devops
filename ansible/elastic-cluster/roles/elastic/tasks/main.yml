@@ -20,18 +20,18 @@
   - name : copy es logging template
     template: src=logging.j2 dest=/mnt/elastic/config/logging.yml owner=elasticsearch group=docker mode=0774
 
-  - name: elasticsearch container
-    docker:
-      name: esnode
-      image: elasticsearch
-      state: started
-      ports:
-        - 9200:9200
-        - 9300:9300
-      volumes:
-        - /mnt/elastic/data:/usr/share/elasticsearch/data
-        - /mnt/elastic/logs:/usr/share/elasticsearch/logs
-        - /mnt/elastic/config:/usr/share/elasticsearch/config
-      env:
-        # should set max container heap size to 30.5g so not to hit JVM pointer size change
-        - ES_HEAP_SIZE: "{{ es_heap_size }}"
+#  - name: elasticsearch container
+#    docker:
+#      name: esnode
+#      image: elasticsearch
+#      state: started
+#      ports:
+#        - 9200:9200
+#        - 9300:9300
+#      volumes:
+#        - /mnt/elastic/data:/usr/share/elasticsearch/data
+#        - /mnt/elastic/logs:/usr/share/elasticsearch/logs
+#        - /mnt/elastic/config:/usr/share/elasticsearch/config
+#      env:
+#        # should set max container heap size to 30.5g so not to hit JVM pointer size change
+#        - ES_HEAP_SIZE: "{{ es_heap_size }}"
