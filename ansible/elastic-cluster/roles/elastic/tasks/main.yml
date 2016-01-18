@@ -21,6 +21,8 @@
     template: src=logging.j2 dest=/mnt/elastic/config/logging.yml owner=elasticsearch group=docker mode=0774
 
   - name: elasticsearch container
+    become: yes
+    become_user: elasticsearch
     docker:
       name: esnode
       image: elasticsearch
