@@ -1,6 +1,9 @@
 ---
+  - name : create es group
+    group: name=elasticsearch gid=108 system=yes
+
   - name : create es user
-    user: name=elasticsearch comment="Elasticsearch Daemon" system=yes createhome=no group=elasticsearch groups=elasticsearch,docker
+    user: name=elasticsearch comment="Elasticsearch Daemon" uid=105 system=yes createhome=no group=elasticsearch groups=elasticsearch,docker
 
   - name : create data directory
     file: state=directory recurse=yes path=/mnt/elastic/data owner=elasticsearch group=docker mode=0774
