@@ -14,16 +14,22 @@
   - name : create config directory
     file: state=directory recurse=yes path=/mnt/elastic/config owner=elasticsearch group=docker mode=0774
 
+  - name : copy Dockerfile for ES+plugins
+    template: src=Dockerfile.j2 dest=/mnt/elastic/Dockerfile owner=deploy group=docker mode=0774
+
   - name : copy es config template
     template: src=elasticsearch.j2 dest=/mnt/elastic/config/elasticsearch.yml owner=elasticsearch group=docker mode=0774
 
   - name : copy es logging template
     template: src=logging.j2 dest=/mnt/elastic/config/logging.yml owner=elasticsearch group=docker mode=0774
 
+  - name: check or build docker image
+    docker_image: path="/mnt/elastic" name="datasci/es-v211-plugins" state=build
+
   - name: elasticsearch container
     docker:
       name: esnode
-      image: elasticsearch
+      image: datasci/es-v211-plugins
       state: restarted
       ports:
         - 9200:9200
