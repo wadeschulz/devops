@@ -1,0 +1,5 @@
+---
+  - name: remove docker container
+    docker:
+      name: {{ container_name }}
+      state: absent

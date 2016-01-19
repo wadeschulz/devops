@@ -24,7 +24,7 @@
     docker:
       name: esnode
       image: elasticsearch
-      state: started
+      state: restarted
       ports:
         - 9200:9200
         - 9300:9300

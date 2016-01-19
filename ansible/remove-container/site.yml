@@ -1,0 +1,11 @@
+---
+- hosts: all
+  user: deploy
+  become: yes
+  become_method: sudo
+
+  roles:
+   - remove-container
+
+  vars:
+   - container_name: 
