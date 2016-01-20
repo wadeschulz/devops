@@ -27,9 +27,9 @@
     docker_image: path="/mnt/elastic" name="datasci/es-v211-plugins" state=build
 
   - name: elasticsearch container
+    become_user: elasticsearch
     docker:
       name: esnode
-      become_user: elasticsearch
       image: datasci/es-v211-plugins
       state: restarted
       ports:
