@@ -30,7 +30,6 @@
     docker:
       name: esnode
       become_user: elasticsearch
-      become_method: su
       image: datasci/es-v211-plugins
       state: restarted
       ports:
