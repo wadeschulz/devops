@@ -29,6 +29,11 @@
   - name: elasticsearch container
     docker:
       name: esnode
+      state: absent
+
+  - name: elasticsearch container
+    docker:
+      name: esnode
       image: datasci/es-v211-plugins
       state: restarted
       ports:
