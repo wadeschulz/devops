@@ -1,8 +1,5 @@
 ---
 - hosts: all
-  user: root
-  become: yes
-  become_method: sudo
 
   roles:
    - docker
