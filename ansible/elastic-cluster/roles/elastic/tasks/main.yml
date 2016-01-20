@@ -29,6 +29,7 @@
   - name: elasticsearch container
     docker:
       name: esnode
+      image: datasci/es-v211-plugins
       state: absent
 
   - name: elasticsearch container
