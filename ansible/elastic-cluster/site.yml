@@ -9,8 +9,7 @@
    - elastic
 
   vars:
-   - docker_users:
-     - deploy
-   - cluster_name: darkstar
+   - docker_users: []
+   - cluster_name: datasci-elasticprod
    # max heap size per container should be 30.5g or 1/2 avail mem, whichever is smaller
    - es_heap_size: 3g
