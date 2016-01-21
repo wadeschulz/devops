@@ -1,12 +1,19 @@
 ---
+############# Network Settings #############
 network:
   bind_host: 0.0.0.0
   publish_host: {{ ansible_default_ipv4.address }}
+
+############# Config/Log Path #############
 path:
   logs: /usr/share/elasticsearch/logs
   data: /usr/share/elasticsearch/data
+
+############# Cluster Info #############
 cluster:
   name: {{ cluster_name }}
+
+############# Node Config #############
 node:
   name: {{ ansible_hostname }}
   # select node role
@@ -27,9 +34,13 @@ node:
   master: true
   data: true
   {% endif %}
+
+############# Index Settings #############
 index: 
   number_of_shards: 5
   number_of_replicas: 3
+
+############# JVM/Memory #############
 bootstrap:
   # ElasticSearch performs poorly when JVM starts swapping: you should ensure that
   # it _never_ swaps.
@@ -37,6 +48,8 @@ bootstrap:
   # Set this property to true to lock the memory:
   #
   mlockall: true
+
+############# Cluster Discovery #############
 discovery:
   zen:
     minimum_master_nodes: 2
@@ -52,3 +65,9 @@ discovery:
         {% endif %}{% endfor %}{% for host in groups['masterdata_nodes'] %}{% if hostvars[host]['ansible_default_ipv4']['address'] != ansible_default_ipv4.address %}
           - {{ hostvars[host]['ansible_default_ipv4']['address'] }}
         {% endif %}{% endfor %}
+
+############# Safety #############
+# Cannot delete all indices at once
+action.disable_delete_all_indices: false
+# To delete wildcard * will not work have to give complete name
+action.destructive_requires_name: true
