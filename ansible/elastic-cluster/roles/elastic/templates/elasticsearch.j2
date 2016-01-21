@@ -8,7 +8,7 @@ path:
 cluster:
   name: {{ cluster_name }}
 node:
-  #name: <NAME OF YOUR NODE>
+  name: {{ ansible_hostname }}
   # select node role
   {% if 'data_nodes' in group_names %}
   ## data node only
