@@ -1,0 +1,10 @@
+---
+- hosts: all
+
+  roles:
+   - docker
+   - elastic
+
+  vars:
+   - docker_users: root
+   - elasticsearch_url: 

@@ -1,0 +1,35 @@
+---
+  - name : create es group
+    group: name=elasticsearch gid=108
+
+  - name : create es user
+    user: name=elasticsearch comment="Elasticsearch Daemon" uid=105 createhome=no group=elasticsearch groups=elasticsearch,docker
+
+  - name : create config directory
+    file: state=directory recurse=yes path=/mnt/kibana/config owner=elasticsearch group=docker mode=0774
+
+  - name : copy Dockerfile for Kibana+plugins
+    template: src=Dockerfile.j2 dest=/mnt/kibana/Dockerfile owner=elasticsearch group=docker mode=0774
+
+  - name : copy es config template
+    template: src=kibana.j2 dest=/mnt/kibana/config/kibana.yml owner=elasticsearch group=docker mode=0774
+
+  - name: check or build docker image
+    docker_image: path="/mnt/kibana" name="datasci/kibana-marvel" state=build
+
+  - name: remove existing kibana container
+    docker:
+      name: esnode
+      image: datasci/kibana-marvel
+      state: absent
+
+  - name: launch new kibana container
+    become_user: elasticsearch
+    docker:
+      name: kibana
+      image: datasci/kibana
+      state: restarted
+      ports:
+        - 5601:5601
+      volumes:
+        - /mnt/kibana/config:/opt/kibana/config
