@@ -27,7 +27,7 @@
     become_user: elasticsearch
     docker:
       name: kibana
-      image: datasci/kibana
+      image: datasci/kibana-marvel
       state: restarted
       ports:
         - 5601:5601
