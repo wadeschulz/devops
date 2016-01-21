@@ -3,7 +3,7 @@
 
   roles:
    - docker
-   - elastic
+   - kibana
 
   vars:
    - docker_users: root
