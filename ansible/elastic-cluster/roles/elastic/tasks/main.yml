@@ -23,14 +23,17 @@
   - name : copy es logging template
     template: src=logging.j2 dest=/mnt/elastic/config/logging.yml owner=elasticsearch group=docker mode=0774
 
-  - name: check or build docker image
-    docker_image: path="/mnt/elastic" name="datasci/es-v211-plugins" state=build
-
   - name: elasticsearch container
     docker:
       name: esnode
       image: datasci/es-v211-plugins
       state: absent
+
+  - name: remove old docker image
+    docker_image: path="/mnt/elastic" name="datasci/es-v211-plugins" state=absent
+
+  - name: build docker image
+    docker_image: path="/mnt/elastic" name="datasci/es-v211-plugins" state=build
 
   - name: elasticsearch container
     become_user: elasticsearch
