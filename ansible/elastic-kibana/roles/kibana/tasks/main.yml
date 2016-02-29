@@ -14,14 +14,17 @@
   - name : copy es config template
     template: src=kibana.j2 dest=/mnt/kibana/config/kibana.yml owner=elasticsearch group=docker mode=0774
 
-  - name: check or build docker image
-    docker_image: path="/mnt/kibana" name="datasci/kibana-marvel" state=build
-
   - name: remove existing kibana container
     docker:
       name: esnode
       image: datasci/kibana-marvel
       state: absent
+
+  - name: remove old docker image
+    docker_image: path="/mnt/kibana" name="datasci/kibana-marvel" state=absent
+
+  - name: build docker image
+    docker_image: path="/mnt/kibana" name="datasci/kibana-marvel" state=build
 
   - name: launch new kibana container
     become_user: elasticsearch
