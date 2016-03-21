@@ -49,3 +49,7 @@ AMBARIQA_UID : 1009
 # hcat user
 HCAT_USER : hcat
 HCAT_UID : 1010
+
+# nagios user
+NAGIOS_USER : nagios
+NAGIOS_UID : 1011

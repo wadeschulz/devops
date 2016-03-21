@@ -1,2 +1,4 @@
 packer_cache/
 *.swp
+*.sublime-workspace
+*.sublime-workspace

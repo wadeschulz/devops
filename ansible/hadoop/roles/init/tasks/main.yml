@@ -17,6 +17,9 @@
   - name : install openjdk
     yum: name=java-1.8.0-openjdk state=latest
 
+  - name : install mysql java connector
+    yum: name=mysql-connector-java* state=latest
+
   - name : set umask
     shell: umask 0022 && echo umask 0022 >> /etc/profile
 
