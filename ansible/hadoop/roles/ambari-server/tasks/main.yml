@@ -15,7 +15,7 @@
    wait_for : path=/tmp/output search_regex="completed successfully"
 
  - name : start ambari server
-   service : name=ambari-server state=restarted
+   service : name=ambari-server state=restarted enabled=yes
 
  - name : check if ambari-server is up
    wait_for : host={{ hostvars[groups['ambari_server'][0]]['ansible_fqdn'] }} port=8080 delay=10
