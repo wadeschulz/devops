@@ -5,8 +5,23 @@
   - name : install selinux python lib
     yum: name=libselinux-python state=latest
 
+  - name : Disable SELinux 
+    selinux : state=disabled
+
+  - name : Disable firewalld
+    service: name=firewalld state=stopped enabled=no
+
   - name : install mlocate
     yum: name=mlocate state=latest
+
+  - name : install openjdk
+    yum: name=java-1.8.0-openjdk state=latest
+
+  - name : set umask
+    shell: umask 0022 && echo umask 0022 >> /etc/profile
+
+  - name : set ulimit
+    shell: ulimit -n 10000
 
   - name : add SSH public key
     authorized_key: user=root key=https://github.com/wadeschulz.keys

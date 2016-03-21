@@ -1,16 +1,17 @@
 - hosts: all
   vars_files:
-   - vars/hdp.yml
-   - vars/network_info.yml
-   - vars/users.yml
    - vars/repository_info.yml
   user : root
   roles:
    - init
-   - selinux
-   - ntp
-   - prereq
    - repository
+
+- hosts: ambari_agents
+  user : root
+  vars_files:
+   - vars/users.yml
+  roles:
+   - user-creations
 
 - hosts: ambari_server
   user : root

@@ -1,0 +1,741 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"apache",
+				"apache-maven-3"
+			],
+			[
+				"exi",
+				"exit_code"
+			],
+			[
+				"tumo",
+				"tumorBasePath"
+			],
+			[
+				"germlin",
+				"germlineBasePath"
+			],
+			[
+				"tu",
+				"tumorAnalysisId"
+			],
+			[
+				"tumorF",
+				"tumorFile"
+			],
+			[
+				"germli",
+				"germlineFile"
+			],
+			[
+				"ger",
+				"germlineAnalysisId"
+			],
+			[
+				"sub",
+				"subjectId"
+			],
+			[
+				"tum",
+				"tumorFilename"
+			],
+			[
+				"germ",
+				"germlineAnalysisId"
+			],
+			[
+				"tumor",
+				"tumorFilename"
+			],
+			[
+				"targ",
+				"targetList"
+			],
+			[
+				"cgq",
+				"cgqueryPend"
+			],
+			[
+				"artif",
+				"artifact_path"
+			],
+			[
+				"arti",
+				"artifcats"
+			],
+			[
+				"ESXI",
+				"ESXI_USER"
+			],
+			[
+				"sam",
+				"samtools-1"
+			],
+			[
+				"Bo",
+				"bowtie2"
+			],
+			[
+				"q",
+				"query"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 490.0,
+		"last_filter": "sftp",
+		"selected_items":
+		[
+			[
+				"sftp",
+				"SFTP: Edit Server…"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"yaml",
+				"Set Syntax: YAML"
+			],
+			[
+				"javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"yml",
+				"Set Syntax: YAML"
+			],
+			[
+				"java",
+				"Set Syntax: Java"
+			],
+			[
+				"text",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"c#",
+				"Set Syntax: C#"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"isntall",
+				"Package Control: Install Package"
+			],
+			[
+				"dock",
+				"Set Syntax: Dockerfile"
+			],
+			[
+				"docker",
+				"Set Syntax: Dockerfile"
+			],
+			[
+				"indices",
+				"Elasticsearch: Indices Delete"
+			],
+			[
+				"elastic",
+				"Elasticsearch: Multiple Search"
+			],
+			[
+				"elastic push",
+				"Elasticsearch: Put Search Template"
+			],
+			[
+				"delete",
+				"Elasticsearch: Indices Delete"
+			],
+			[
+				"elastic de",
+				"Elasticsearch: Indices Delete"
+			],
+			[
+				"elastic index",
+				"Elasticsearch: Settings Select Index"
+			],
+			[
+				"document",
+				"Elasticsearch: Get Document Source"
+			],
+			[
+				"elast",
+				"Elasticsearch: Get Document"
+			],
+			[
+				"get do",
+				"Elasticsearch: Get Document"
+			],
+			[
+				"elastic doc",
+				"Elasticsearch: Get Document"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"elasticsearch",
+				"Set Syntax: Elasticsearch"
+			],
+			[
+				"Package Control: re",
+				"Package Control: Remove Package"
+			],
+			[
+				"python",
+				"Set Syntax: Python"
+			],
+			[
+				"sftp ",
+				"SFTP: Browse Remote…"
+			],
+			[
+				"sftp dow",
+				"SFTP: Download File"
+			],
+			[
+				"elasticsearch search",
+				"Elasticsearch: Get Search Template"
+			],
+			[
+				"ind",
+				"Elasticsearch: Index Stats"
+			],
+			[
+				"index",
+				"Elasticsearch: Open Index"
+			],
+			[
+				"elastic get",
+				"Elasticsearch: Get Document"
+			],
+			[
+				"switch server",
+				"Elasticsearch: Switch Servers"
+			],
+			[
+				"elastic stats",
+				"Elasticsearch: Cluster Stats"
+			],
+			[
+				"switch",
+				"Elasticsearch: Switch Servers"
+			],
+			[
+				"elasticsearch cat",
+				"Elasticsearch: Cluster Stats"
+			],
+			[
+				"get ",
+				"Elasticsearch: Get Document"
+			],
+			[
+				"elasticsearch del",
+				"Elasticsearch: Delete Index"
+			],
+			[
+				"get",
+				"Elasticsearch: Get Source"
+			],
+			[
+				"documen",
+				"Elasticsearch: Get Multiple Documents"
+			],
+			[
+				"elasticsearch stats",
+				"Elasticsearch: Index Stats"
+			],
+			[
+				"elasticsearch no",
+				"Elasticsearch: Nodes Info"
+			],
+			[
+				"elastsearch ser",
+				"Elasticsearch: Switch Servers"
+			],
+			[
+				"elasticsearch serv",
+				"Elasticsearch: Switch Servers"
+			],
+			[
+				"index ",
+				"Elasticsearch: Get Index Settings"
+			],
+			[
+				"settings",
+				"Elasticsearch: Get Index Settings"
+			],
+			[
+				"put m",
+				"Elasticsearch: Put Mapping"
+			],
+			[
+				"create inde",
+				"Elasticsearch: Create Index (Only Create)"
+			],
+			[
+				"elasticsearch put",
+				"Elasticsearch: Put Mapping"
+			],
+			[
+				"elasticsearch index",
+				"Elasticsearch: Get Index Settings"
+			],
+			[
+				"elasticsearch: g",
+				"Elasticsearch: Get Index Settings"
+			]
+		],
+		"width": 549.0
+	},
+	"console":
+	{
+		"height": 162.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/dev/devops/ansible"
+	],
+	"file_history":
+	[
+		"/C/dev/ynhh-devops/ynhh-init/roles/init/tasks/main.yml",
+		"/C/dev/ynhh-devops/ynhh-init/hosts",
+		"/C/dev/ynhh-devops/ynhh-init/site.yml",
+		"/C/dev/ynhh-devops/ynhh-init/roles/init/templates/resolv.j2",
+		"/C/dev/ynhh-devops/ynhh-init/roles/ntp/tasks/main.yml",
+		"/C/dev/ynhh-devops/ynhh-init/roles/ntp/templates/ntp.conf.j2",
+		"/C/dev/ynhh-devops/ynhh-init/roles/disksetup/tasks/main.yml",
+		"/C/dev/devops/ansible/hadoop/roles/ntp/tasks/main.yml",
+		"/C/dev/ynhh-devops/ynhh-init/roles/docker/templates/docker.j2",
+		"/C/dev/ynhh-devops/ynhh-init/roles/docker/tasks/main.yml",
+		"/C/Users/Wade Schulz/AppData/Roaming/Sublime Text 3/Packages/User/sftp_servers/ansible-driver",
+		"/C/dev/ynhh-devops/ynhh-init/sftp-config.json",
+		"/C/users/wadesc~1/appdata/local/temp/sublime-sftp-browse-1457725318/ansible-driver/home/wschulz/hds-ingest/src/hdsingest.py",
+		"/C/users/wadesc~1/appdata/local/temp/sublime-sftp-browse-1457725554/ansible-driver/home/wschulz/hds-ingest/Dockerfile",
+		"/C/users/wadesc~1/appdata/local/temp/sublime-sftp-browse-1457726436/ansible-driver/home/wschulz/hds-ingest/requirements.txt",
+		"/C/dev/typhoon/typhoon-containers/docker-bamtools/Dockerfile",
+		"/C/users/wadesc~1/appdata/local/temp/sublime-sftp-browse-1457725812/ansible-driver/home/wschulz/hds-ingest/src/run.sh",
+		"/C/dev/devops/ansible/elastic-kibana/roles/docker/templates/docker.j2",
+		"/C/dev/jvf/csharp/JsonVariantFormatModel.cs",
+		"/C/dev/VarBase/VarBase-Galileo/VarBase.Galileo.Common/Models/JsonVariantFormatModels.cs",
+		"/C/Users/Wade Schulz/Desktop/index.html",
+		"/C/dev/devops/ansible/elastic-kibana/roles/docker/tasks/main.yml",
+		"/C/dev/devops/ansible/elastic-kibana/roles/kibana/tasks/main.yml",
+		"/C/dev/devops/ansible/elastic-cluster/site.yml",
+		"/C/dev/devops/ansible/elastic-cluster/roles/elastic/tasks/main.yml",
+		"/C/dev/devops/ansible/elastic-cluster/roles/elastic/templates/elasticsearch.j2",
+		"/C/dev/yalepmi/12.md",
+		"/C/users/wadesc~1/appdata/local/temp/sublime-sftp-browse-1453988926/ansible-driver/home/wschulz/zeppelin/Dockerfile",
+		"/C/datasci/data/23mesnp.txt",
+		"/C/dev/typhoon/typhoon-containers/docker-molubuntu-base/Dockerfile",
+		"/C/dev/typhoon/typhoon-containers/docker-somaticsniper/Dockerfile",
+		"/C/users/wadesc~1/appdata/local/temp/sublime-sftp-browse-1453836926/ansible-driver/home/wschulz/zeppelin/Dockerfile",
+		"/C/dev/devops/ansible/elastic-cluster/roles/docker/tasks/main.yml",
+		"/C/dev/devops/ansible/esxiguest-init/roles/init/tasks/main.yml",
+		"/C/dev/devops/ansible/elastic-cluster/roles/elastic/templates/Dockerfile.j2",
+		"/C/dev/typhoon/typhoon-io/docker-elastic-plugins/Dockerfile",
+		"/C/Users/Wade Schulz/AppData/Roaming/Sublime Text 3/Packages/User/sftp_servers/ynhh-lab-59",
+		"/C/dev/typhoon/typhoon-containers/docker-luigi/Dockerfile",
+		"/C/users/wadesc~1/appdata/local/temp/sublime-sftp-browse-1452803253/ansible-driver/home/wschulz/devops/docker-elastic/Dockerfile",
+		"/C/datasci/data/results/ANION GAP.txt",
+		"/C/users/wadesc~1/appdata/local/temp/sublime-sftp-browse-1452518157/ynhh-lab-59/home/deploy/typhoon-luigi/tcga-get-ids.py",
+		"/C/dev/typhoon/typhoon-io/luigi-tcga/tcga-clonality.py",
+		"/C/users/wadesc~1/appdata/local/temp/sublime-sftp-browse-1452553730/ynhh-lab-59/home/deploy/typhoon-luigi/tcga-clonality.py",
+		"/C/users/wadesc~1/appdata/local/temp/sublime-sftp-browse-1452431297/ynhh-lab-59/home/deploy/typhoon-luigi/tcga-clonality.py",
+		"/C/Users/Wade Schulz/AppData/Roaming/Sublime Text 3/Packages/SFTP/SFTP.sublime-settings",
+		"/C/dev/typhoon/typhoon-containers/docker-cghub/Dockerfile",
+		"/C/Users/Wade Schulz/AppData/Local/Temp/U9I8OHKfl90/cghub.key",
+		"/C/dev/typhoon/typhoon-containers/docker-sciclone/Dockerfile",
+		"/C/dev/typhoon/typhoon-containers/docker-samtools/Dockerfile",
+		"/C/dev/datasci/oru-repository/hash_generator.py",
+		"/C/dev-temp/1_4_16 Hadoop Disconnect.pcapng",
+		"/C/dev/datasci/bedmonitor-data/storm-topolgies/target/dependency-reduced-pom.xml",
+		"/C/dev-temp/alarmsub.txt",
+		"/C/dev/datasci/bedmonitor-data/storm-topolgies/target/avromonitorstorm-0.7-SNAPSHOT-shaded.jar",
+		"/C/dev/datasci/clinical-genomics/data-models/specimen_data_model.js",
+		"/C/dev/datasci/datasci-monitoring/DataSci.Monitoring.PagerDuty.nuspec",
+		"/C/dev/datasci/datasci-monitoring/DataSci.Monitoring.PagerDuty.Driver/Program.cs",
+		"/C/dev/datasci/datasci-monitoring/DataSci.Monitoring.PagerDuty.Driver/App.config",
+		"/C/Users/Wade Schulz/Downloads/tableinfo.0000000001",
+		"/C/Users/Wade Schulz/Downloads/hbase.id",
+		"/C/dev/VarBase/VarBase-Bioinformatics/VarBase.Binf.NextGenParser.nuspec",
+		"/C/dev/VarBase/VarBase-Bioinformatics/VarBase.Binf.Toolkit.nuspec",
+		"/C/dev-temp/alarmtest.txt",
+		"/C/dev/datasci/datasci-monitoring/DataSci.Monitoring.QueueConsole/QueueList.config",
+		"/C/dev/devops/ansible/README.md",
+		"/C/dev/devops/ansible/hadoop-postdep/vars/sqljdbc.yml",
+		"/C/dev/devops/ansible/hadoop-postdep/roles/sqljdbc/tasks/main.yml",
+		"/C/dev/datasci/datasci-monitoring/DataSci.Monitoring.QueueConsole/bin/Debug/QueueList.config",
+		"/C/dev/devops/ansible/hadoop/site.yml",
+		"/C/Users/Wade Schulz/.ssh/github_rsa.pub",
+		"/C/dev/devops/ansible/hadoop-postdep/site.yml",
+		"/C/dev/devops/ansible/hadoop-postdep/roles/hue-prereq/tasks/main.yml",
+		"/C/dev/devops/ansible/hadoop/roles/prereq/tasks/main.yml",
+		"/C/dev/devops/ansible/hadoop/roles/user-creations/tasks/main.yml",
+		"/C/dev/devops/ansible/hadoop/roles/init/tasks/main.yml",
+		"/C/dev/devops/ansible/hadoop/vars/hdp.yml",
+		"/C/dev/devops/ansible/hadoop-postdep/hosts",
+		"/C/dev/datasci/README.md",
+		"/C/dev/VarBase/VarBase-Research/VarBase.Research.sln",
+		"/C/Users/Wade Schulz/Desktop/test/test.txt",
+		"/C/Users/Wade Schulz/Desktop/1652738851251352.json",
+		"/C/dev/typhoon/typhoon-containers/docker-sciclone/sciclone-batch.py",
+		"/C/Users/Wade Schulz/.ssh/github_rsa.ppk",
+		"/C/dev/typhoon/typhoon-containers/docker-sciclone/sciclone-vcf-batch.py",
+		"/C/Users/Wade Schulz/Desktop/Schulz2.txt",
+		"/C/Users/Wade Schulz/Desktop/Schulz/Schulz.txt",
+		"/F/vcftemp/anno/AML102.out",
+		"/F/vcftemp/input/AML102.vcf",
+		"/C/dev/typhoon/typhoon-containers/docker-vep/Dockerfile",
+		"/C/dev/typhoon/typhoon-containers/docker-tabix-allelefreq/Dockerfile",
+		"/C/dev/typhoon/typhoon-containers/docker-sciclone/sciclone-batch-processor.py",
+		"/C/dev/typhoon/typhoon-containers/docker-vep/vep-batch-processor.py",
+		"/F/AML NGS/variantanno/AML102.out",
+		"/F/AML NGS/variantanno/AML109.out",
+		"/F/AML NGS/variantanno/AML104.out",
+		"/F/AML NGS/Clonal - Blood Paper/VCF Data/FLW-14-38465.vcf",
+		"/C/dev/typhoon/typhoon-containers/docker-conifer/Dockerfile",
+		"/E/AML NGS/Clonal - Blood Paper/VCF Data/AML125.vcf",
+		"/E/AML NGS/Clonal - Blood Paper/VCF Data/AML122.vcf",
+		"/E/AML NGS/Clonal - Blood Paper/VCF Data/AML104_6_18_14.vcf",
+		"/E/AML NGS/Clonal - Blood Paper/VCF Data/AML108_6_24_14.vcf",
+		"/C/dev/datasci/hdp-devops/hosts",
+		"/C/dev/datasci/hdp-devops/site.yml",
+		"/C/dev/devops/packer/centos67/centos6.json",
+		"/C/Users/Wade Schulz/Downloads/download",
+		"/C/dev/devops/packer/centos7/centos6.json",
+		"/C/dev/devops/packer/centos7/kickstart.cfg",
+		"/C/dev/datasci/clinical-genomics/specimen_data_model.js",
+		"/C/dev/datasci/clinical-genomics/variant_data_model.js",
+		"/C/dev/typhoon/typhoon-containers/docker-bowtie2/Dockerfile",
+		"/C/dev/typhoon/typhoon-containers/docker-controlfreec/Dockerfile",
+		"/C/dev/datasci/alarm-receiver/alarm-server.py",
+		"/C/dev-temp/labutil_bmdi_alarms_perl.txt",
+		"/C/dev/datasci/alarm-receiver/actor.py",
+		"/C/dev/devops/packer-ubuntu1404/ubuntu-14.04.json",
+		"/C/dev/datasci/clinical-genomics/specimen_data_model.json",
+		"/C/dev/datasci/clinical-genomics/dataModel.json",
+		"/C/dev/lighthouse/Lighthouse.Web/Dockerfile",
+		"/C/dev/lighthouse/Docker/nginx.conf",
+		"/C/dev/lighthouse/Docker/nginx-fastcgi_params.conf",
+		"/C/dev/lighthouse/Docker/install.sh",
+		"/C/Users/Wade Schulz/Desktop/ynhh_varbase_org.cer",
+		"/C/Users/Wade Schulz/Box Sync/Conferences/2015-11 AMP/AMP 2015 Poster.pdf",
+		"/C/Users/Wade Schulz/Downloads/Typhoon_Typhoon-Lighthouse_13_artifacts/Dockerfile/Dockerfile",
+		"/C/dev/datasci/alarm-receiver/alarm-receiver.py",
+		"/C/dev-temp/bedalarms.hl7",
+		"/C/dev-temp/single-bedalarm.hl7",
+		"/C/Users/Wade Schulz/Downloads/Yale-AML-MDS (1).bed"
+	],
+	"find":
+	{
+		"height": 47.0
+	},
+	"find_in_files":
+	{
+		"height": 129.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"4b8ff65f",
+			"  ",
+			".bam",
+			"subjectId",
+			"popen",
+			"PICSER",
+			"</option>",
+			"<option value=\".*\">",
+			" \\/\\/.*\\n",
+			"MSH|",
+			"geo\":",
+			"geo",
+			" { get; set; }",
+			"bool?",
+			"double?",
+			"int?",
+			"string",
+			")]",
+			"[JsonProperty(PropertyName = ",
+			" { get; set; }",
+			"bool?",
+			"double?",
+			"int?",
+			"string",
+			")]",
+			"[JsonProperty(PropertyName = ",
+			"\\t",
+			"\"",
+			":",
+			", ",
+			"\\t",
+			"v70.0",
+			"99381",
+			"chr",
+			"exon",
+			"canonical",
+			"chr5",
+			"npm1",
+			"double,",
+			"bool",
+			"int,",
+			"string,",
+			"//.*\\n",
+			"double,",
+			"int,",
+			"string,",
+			"// .*\\n",
+			"RecordRawReportElement",
+			"Message content:",
+			"MSG_3",
+			"Queue",
+			"port ",
+			"port",
+			"disk",
+			"2015-01-01",
+			"datetime",
+			"double",
+			"bool",
+			"int",
+			"string",
+			" \\/\\/.*\\n",
+			" \\/\\/.*\\",
+			"ref",
+			"snp",
+			"indel",
+			"\\\"",
+			",",
+			"chr13",
+			"death",
+			"flt3",
+			"NPM1",
+			"npm1",
+			"=",
+			" ",
+			">=90",
+			">90",
+			"NEG",
+			"NEGATIVE",
+			"font",
+			"countdown",
+			"h5file_out",
+			"wheel",
+			"workdata",
+			"highchart",
+			"helixdb1vt.ynhh.org",
+			"$user_dn",
+			"27785307",
+			"27910864",
+			"12406058",
+			"12661763",
+			"\"int\""
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"\\n",
+			"",
+			"\\n",
+			";",
+			"Boolean",
+			"Double",
+			"Integer",
+			"String",
+			")",
+			"@SerializedName(",
+			";",
+			"Boolean",
+			"Double",
+			"Integer",
+			"String",
+			")",
+			"@SerializedName(",
+			":",
+			"",
+			"\\t",
+			"\\n",
+			"",
+			"0.0,",
+			"true",
+			"0,",
+			"\"string\",",
+			"\\n",
+			"0.0,",
+			"0,",
+			"\"string\",",
+			"\\n",
+			"'2015-01-01'",
+			"2015-01-01",
+			"0.0",
+			"true",
+			"0",
+			"'string'",
+			"\\n",
+			"",
+			"alt",
+			"\"",
+			",\\n",
+			":",
+			"\\n",
+			"90",
+			"<16",
+			"sudo",
+			"SERVERADDR",
+			"\"integer\""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.elasticsearch":
+	{
+		"height": 130.0
+	},
+	"output.exec":
+	{
+		"height": 425.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 130.0
+	},
+	"pinned_build_system": "",
+	"project": "ansible-devops.sublime-project",
+	"replace":
+	{
+		"height": 80.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 323.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
