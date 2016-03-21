@@ -1,55 +1,34 @@
 ---
 #
 #               Users and Groups
-#               You don't need to edit it
 #               
 #               Create ahead of installation to guarantee uniform UID / GID across the environment
 #
 
-# A common group shared by services.
-HADOOP_GROUP : hadoop
-HADOOP_GID : 1000
+hdp_groups:
+  - { name: 'hadoop', gid: '1000' }
+  - { name: 'knox', gid: '1001' }
+  - { name: 'spark', gid: '1002' }
+  - { name: 'users', gid: '1003' }
 
-#  HDFS service user.
-HDFS_USER : hdfs
-HDFS_UID : 1000
-
-#  YARN service user.
-YARN_USER : yarn
-YARN_UID : 1001
-
-#  MapReduce service user.
-MAPRED_USER : mapred
-MAPRED_UID : 1002
-
-#  Oozie service user.
-OOZIE_USER : oozie
-OOZIE_UID : 1003
-
-#  Hive service user.
-HIVE_USER : hive
-HIVE_UID : 1004
-
-#  HBase service user.
-HBASE_USER : hbase
-HBASE_UID : 1005
-
-#  ZooKeeper service user.
-ZOOKEEPER_USER : zookeeper
-ZOOKEEPER_UID : 1006
-
-# sqoop user
-SQOOP_USER : sqoop
-SQOOP_UID : 1008
-
-# ambari-qa user
-AMBARIQA_USER : ambari-qa
-AMBARIQA_UID : 1009
-
-# hcat user
-HCAT_USER : hcat
-HCAT_UID : 1010
-
-# nagios user
-NAGIOS_USER : nagios
-NAGIOS_UID : 1011
+hdp_users:
+  - { name: 'ambari-qa', uid: '1000', groups: 'hadoop' }
+  - { name: 'ams', uid: '1001', groups: 'hadoop' }
+  - { name: 'atlas', uid: '1002', groups: 'hadoop' }
+  - { name: 'falcon', uid: '1003', groups: 'hadoop' }
+  - { name: 'flume', gid: '1004', groups: 'hadoop' }
+  - { name: 'hbase', uid: '1005', groups: 'hadoop' }
+  - { name: 'hcat', uid: '1006', groups: 'hadoop' }
+  - { name: 'hdfs', uid: '1007', groups: 'hadoop' }
+  - { name: 'hive', uid: '1008', groups: 'hadoop' }
+  - { name: 'kafka', gid: '1009', groups: 'hadoop' }
+  - { name: 'knox', gid: '1010', groups: 'hadoop,knox' }
+  - { name: 'mapred', uid: '1011', groups: 'hadoop' }
+  - { name: 'nagios', uid: '1012', groups: 'hadoop' }
+  - { name: 'oozie', uid: '1013', groups: 'hadoop' }
+  - { name: 'spark', uid: '1014', groups: 'hadoop,spark' }
+  - { name: 'sqoop', uid: '1015', groups: 'hadoop' }
+  - { name: 'storm', uid: '1016', groups: 'hadoop' }
+  - { name: 'tez', uid: '1017', groups: 'hadoop' }
+  - { name: 'yarn', uid: '1018', groups: 'hadoop' }
+  - { name: 'zookeeper', uid: '1019', groups: 'hadoop' }
