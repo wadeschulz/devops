@@ -20,6 +20,12 @@
   - name : install mysql java connector
     yum: name=mysql-connector-java* state=latest
 
+  - name : create java lib directory
+    file: path=/usr/share/java state=directory mode=0755 recurse=yes
+
+  - name : copy oracle jdbc connector
+    copy: src=/home/wschulz/libs/ojdbc6.jar dest=/usr/share/java/ojdbc6.jar owner=root group=root mode=0644
+
   - name : set umask
     shell: umask 0022 && echo umask 0022 >> /etc/profile
 
