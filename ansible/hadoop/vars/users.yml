@@ -16,13 +16,13 @@ hdp_users:
   - { name: 'ams', uid: '1001', groups: 'hadoop' }
   - { name: 'atlas', uid: '1002', groups: 'hadoop' }
   - { name: 'falcon', uid: '1003', groups: 'hadoop' }
-  - { name: 'flume', gid: '1004', groups: 'hadoop' }
+  - { name: 'flume', uid: '1004', groups: 'hadoop' }
   - { name: 'hbase', uid: '1005', groups: 'hadoop' }
   - { name: 'hcat', uid: '1006', groups: 'hadoop' }
   - { name: 'hdfs', uid: '1007', groups: 'hadoop' }
   - { name: 'hive', uid: '1008', groups: 'hadoop' }
-  - { name: 'kafka', gid: '1009', groups: 'hadoop' }
-  - { name: 'knox', gid: '1010', groups: 'hadoop,knox' }
+  - { name: 'kafka', uid: '1009', groups: 'hadoop' }
+  - { name: 'knox', uid: '1010', groups: 'hadoop,knox' }
   - { name: 'mapred', uid: '1011', groups: 'hadoop' }
   - { name: 'nagios', uid: '1012', groups: 'hadoop' }
   - { name: 'oozie', uid: '1013', groups: 'hadoop' }
