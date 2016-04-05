@@ -1,7 +1,10 @@
 ---
 - hosts: docker_daemons
   user: deploy
-  sudo: yes
+  become: yes
+  become_method: sudo
 
   roles:
-   - docker
+   - role: docker
+     docker_users:
+      - deploy
