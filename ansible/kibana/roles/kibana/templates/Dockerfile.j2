@@ -1,0 +1,7 @@
+FROM elasticsearch:2.1.1
+
+MAINTAINER Wade Schulz <wade.schulz@gmail.com>
+
+RUN plugin install elasticsearch/license/latest
+RUN plugin install marvel-agent
+RUN plugin install elasticsearch/watcher/latest

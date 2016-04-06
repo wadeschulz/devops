@@ -1,0 +1,19 @@
+---
+  - name : Update yum packages
+    yum: name=* state=latest
+
+  - name : Install docker/ansible dependencies
+    yum: name=python-docker-py state=latest
+
+  - name: add docker repository
+    template: src=docker.j2 dest=/etc/yum.repos.d/docker.repo
+
+  - name: install docker engine
+    action: yum name=docker-engine state=present
+
+  - name: start docker service
+    service: name=docker state=started
+
+  - name: add users to docker group
+    user: name={{ item }} groups=docker
+    with_items: "{{ docker_users }}"

@@ -1,0 +1,50 @@
+---
+  - name : create es group
+    group: name=elasticsearch gid=108
+
+  - name : create es user
+    user: name=elasticsearch comment="Elasticsearch Daemon" uid=105 createhome=no group=elasticsearch groups=elasticsearch,docker
+
+  - name : create data directory
+    file: state=directory recurse=yes path=/mnt/elastic/data owner=elasticsearch group=docker mode=0774
+
+  - name : create log directory
+    file: state=directory recurse=yes path=/mnt/elastic/logs owner=elasticsearch group=docker mode=0774
+
+  - name : create config directory
+    file: state=directory recurse=yes path=/mnt/elastic/config owner=elasticsearch group=docker mode=0774
+
+  - name : copy Dockerfile for ES+plugins
+    template: src=Dockerfile.j2 dest=/mnt/elastic/Dockerfile owner=elasticsearch group=docker mode=0774
+
+  - name : copy es config template
+    template: src=elasticsearch.j2 dest=/mnt/elastic/config/elasticsearch.yml owner=elasticsearch group=docker mode=0774
+
+  - name : copy es logging template
+    template: src=logging.j2 dest=/mnt/elastic/config/logging.yml owner=elasticsearch group=docker mode=0774
+
+  - name: check or build docker image
+    docker_image: path="/mnt/elastic" name="datasci/es-v211-plugins" state=build
+
+  - name: elasticsearch container
+    docker:
+      name: esnode
+      image: datasci/es-v211-plugins
+      state: absent
+
+  - name: elasticsearch container
+    become_user: elasticsearch
+    docker:
+      name: esnode
+      image: datasci/es-v211-plugins
+      state: restarted
+      ports:
+        - 9200:9200
+        - 9300:9300
+      volumes:
+        - /mnt/elastic/data:/usr/share/elasticsearch/data
+        - /mnt/elastic/logs:/usr/share/elasticsearch/logs
+        - /mnt/elastic/config:/usr/share/elasticsearch/config
+      env:
+        # should set max container heap size to 30.5g so not to hit JVM pointer size change
+        ES_HEAP_SIZE: "{{ es_heap_size }}"
