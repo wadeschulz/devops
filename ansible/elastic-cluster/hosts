@@ -1,1 +1,7 @@
-[docker_daemons]
+[master_nodes]
+
+[data_nodes]
+
+[client_nodes]
+
+[masterdata_nodes]
