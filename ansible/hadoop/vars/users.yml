@@ -12,7 +12,6 @@ hdp_groups:
   - { name: 'users', gid: '1003' }
 
 hdp_users:
-  - { name: 'ambari-qa', uid: '1000', groups: 'hadoop' }
   - { name: 'ams', uid: '1001', groups: 'hadoop' }
   - { name: 'atlas', uid: '1002', groups: 'hadoop' }
   - { name: 'falcon', uid: '1003', groups: 'hadoop' }
@@ -32,3 +31,9 @@ hdp_users:
   - { name: 'tez', uid: '1017', groups: 'hadoop' }
   - { name: 'yarn', uid: '1018', groups: 'hadoop' }
   - { name: 'zookeeper', uid: '1019', groups: 'hadoop' }
+  - { name: 'ambari-qa', uid: '1020', groups: 'hadoop' }
+  - { name: 'slider', uid: '1021', groups: 'hadoop' }
+  - { name: 'ranger', uid: '1022', groups: 'hadoop' }
+  - { name: 'kms', uid: '1023', groups: 'hadoop' }
+  - { name: 'httpfs', uid: '1024', groups: 'hadoop' }
+  - { name: 'hue', uid: '1025', groups: 'hadoop' }
