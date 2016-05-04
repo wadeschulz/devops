@@ -9,16 +9,16 @@
     selinux : state=disabled
 
   - name : Disable firewalld
-    service: name=firewalld state=stopped enabled=no
+    service: name=firewalld state=absent
 
-  - name : install mlocate
-    yum: name=mlocate state=latest
-
-  - name : install openjdk
-    yum: name=java-1.8.0-openjdk state=latest
-
-  - name : install mysql java connector
-    yum: name=mysql-connector-java* state=latest
+  - name : install packages
+    yum: name={{item}} state=latest
+    with_items:
+      - mlocate
+      - java-1.8.0-openjdk
+      - mysql-connector-java*
+      - snappy
+      - snappy-devel
 
   - name : create java lib directory
     file: path=/usr/share/java state=directory mode=0755 recurse=yes
