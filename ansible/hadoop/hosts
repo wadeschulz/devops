@@ -1,4 +1,3 @@
-# NB: The hosts_map is using the variable from this file.
 [ambari_server]
 hdpambari
 

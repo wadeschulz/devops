@@ -4,5 +4,5 @@
 # os={{ansible_distribution}}{{ansible_distribution_version}}
 # oslower=`echo $os  | awk -F"." '{print tolower($1)}'`
 # Define cluster
-/usr/bin/curl -u admin:admin -H "X-Requested-By: ambari" -X PUT -d '{"Repositories":{"base_url" : "{{ hdp_baseurl }}"}}' http://{{ hostvars[groups['ambari_server'][0]]['ansible_fqdn'] }}:8080/api/v1/stacks/HDP/versions/{{ HDP_VERSION }}/operating_systems/redhat6/repositories/HDP-{{ HDP_VERSION }}
+/usr/bin/curl -u admin:admin -H "X-Requested-By: ambari" -X PUT -d '{"Repositories":{"base_url" : "{{ hdp_baseurl }}"}}' http://{{ hostvars[groups['ambari_server'][0]]['ansible_fqdn'] }}:8080/api/v1/stacks/HDP/versions/{{ HDP_VERSION }}/operating_systems/centos7/repositories/HDP-{{ HDP_VERSION }}
 sleep 5

@@ -6,7 +6,8 @@
 # - http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.19/repos/centos6
 # - http://public-repo-1.hortonworks.com/HDP/centos6/2.x/updates/2.1.5.0
 # - http://public-repo-1.hortonworks.com/ambari/centos6/1.x/updates/1.6.1
-ambari_baseurl : http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.2.1.1
+# - http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.2.1.1
+ambari_baseurl : http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.2.2.0
 
 # version 2.4 urls
 hdp_baseurl : http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/{{HDP_MINOR_VERSION}}
