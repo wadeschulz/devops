@@ -17,6 +17,7 @@
       - mlocate
       - java-1.8.0-openjdk
       - mysql-connector-java*
+      - ntp
       - snappy
       - snappy-devel
 
