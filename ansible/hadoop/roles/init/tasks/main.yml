@@ -34,4 +34,4 @@
     shell: ulimit -n 10000
 
   - name : add SSH public key
-    authorized_key: user=root key=https://github.com/wadeschulz.keys
+    authorized_key: user=root key=https://github.com/{{PUBLICKEYS}}.keys
