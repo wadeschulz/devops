@@ -1,6 +1,7 @@
 - hosts: all
   vars_files:
    - vars/repository_info.yml
+   - vars/hdp.yml
   user : root
   roles:
    - init
@@ -10,6 +11,7 @@
   user : root
   vars_files:
    - vars/users.yml
+   - vars/hdp.yml
   roles:
    - user-creations
 
