@@ -12,7 +12,7 @@
     service: name=firewalld state=stopped
 
   - name : install packages
-    yum: name={{item}} state=latest
+    yum: name={{ item }} state=latest
     with_items:
       - mlocate
       - java-1.8.0-openjdk

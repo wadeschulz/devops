@@ -1,39 +1,78 @@
----
-#
-#               Users and Groups
-#               
-#               Create ahead of installation to guarantee uniform UID / GID across the environment
-#
-
 hdp_groups:
-  - { name: 'hadoop', gid: '1000' }
-  - { name: 'knox', gid: '1001' }
-  - { name: 'spark', gid: '1002' }
-  - { name: 'users', gid: '1003' }
+  - { name: "ntp",gid: "38"}
+  - { name: "slocate",gid: "21"}
+  - { name: "hadoop",gid: "1000"}
+  - { name: "hadoopad",gid: "32770"}
+  - { name: "knox",gid: "1001"}
+  - { name: "spark",gid: "1002"}
+  - { name: "hdfs",gid: "1004"}
+  - { name: "rpc",gid: "32"}
+  - { name: "zookeeper",gid: "994"}
+  - { name: "yarn",gid: "993"}
+  - { name: "mapred",gid: "992"}
+  - { name: "httpfs",gid: "991"}
+  - { name: "hbase",gid: "990"}
+  - { name: "slider",gid: "989"}
+  - { name: "storm",gid: "988"}
+  - { name: "kms",gid: "1005"}
+  - { name: "ranger",gid: "1006"}
+  - { name: "zeppelin",gid: "1007"}
+  - { name: "ranger-storm",gid: "1029"}
+  - { name: "storm-hdp_prod",gid: "1030"}
+  - { name: "hdsadmins",gid: "1031"}
+  - { name: "ANONYMOUS",gid: "1032"}
+  - { name: "ansible-managed",gid: "100"}
+  - { name: "schulzwg",gid: "1034"}
+  - { name: "hurleyrs",gid: "1036"}
+  - { name: "falcon",gid: "987"}
+  - { name: "hive",gid: "986"}
+  - { name: "oozie",gid: "985"}
+  - { name: "sqoop",gid: "984"}
+  - { name: "rpcuser",gid: "29"}
+  - { name: "nfsnobody",gid: "65534"}
+  - { name: "byronw3n",gid: "1038"}
+  - { name: "screen",gid: "84"}
+  - { name: "livy",gid: "1039"}
 
 hdp_users:
-  - { name: 'ams', uid: '1001', groups: 'hadoop' }
-  - { name: 'atlas', uid: '1002', groups: 'hadoop' }
-  - { name: 'falcon', uid: '1003', groups: 'hadoop' }
-  - { name: 'flume', uid: '1004', groups: 'hadoop' }
-  - { name: 'hbase', uid: '1005', groups: 'hadoop' }
-  - { name: 'hcat', uid: '1006', groups: 'hadoop' }
-  - { name: 'hdfs', uid: '1007', groups: 'hadoop' }
-  - { name: 'hive', uid: '1008', groups: 'hadoop' }
-  - { name: 'kafka', uid: '1009', groups: 'hadoop' }
-  - { name: 'knox', uid: '1010', groups: 'hadoop,knox' }
-  - { name: 'mapred', uid: '1011', groups: 'hadoop' }
-  - { name: 'nagios', uid: '1012', groups: 'hadoop' }
-  - { name: 'oozie', uid: '1013', groups: 'hadoop' }
-  - { name: 'spark', uid: '1014', groups: 'hadoop,spark' }
-  - { name: 'sqoop', uid: '1015', groups: 'hadoop' }
-  - { name: 'storm', uid: '1016', groups: 'hadoop' }
-  - { name: 'tez', uid: '1017', groups: 'hadoop' }
-  - { name: 'yarn', uid: '1018', groups: 'hadoop' }
-  - { name: 'zookeeper', uid: '1019', groups: 'hadoop' }
-  - { name: 'ambari-qa', uid: '1020', groups: 'hadoop' }
-  - { name: 'slider', uid: '1021', groups: 'hadoop' }
-  - { name: 'ranger', uid: '1022', groups: 'hadoop' }
-  - { name: 'kms', uid: '1023', groups: 'hadoop' }
-  - { name: 'httpfs', uid: '1024', groups: 'hadoop' }
-  - { name: 'hue', uid: '1025', groups: 'hadoop' }
+  - { name: "ntp", uid: "38"}
+  - { name: "ambari-qa", uid: "1020"}
+  - { name: "ams", uid: "1001"}
+  - { name: "atlas", uid: "1002"}
+  - { name: "falcon", uid: "1003"}
+  - { name: "flume", uid: "1004"}
+  - { name: "hbase", uid: "1005"}
+  - { name: "hcat", uid: "1006"}
+  - { name: "hdfs", uid: "1007"}
+  - { name: "hive", uid: "1008"}
+  - { name: "kafka", uid: "1009"}
+  - { name: "mapred", uid: "1011"}
+  - { name: "nagios", uid: "1012"}
+  - { name: "oozie", uid: "1013"}
+  - { name: "sqoop", uid: "1015"}
+  - { name: "storm", uid: "1016"}
+  - { name: "tez", uid: "1017"}
+  - { name: "yarn", uid: "1018"}
+  - { name: "zookeeper", uid: "1019"}
+  - { name: "knox", uid: "1010"}
+  - { name: "spark", uid: "1014"}
+  - { name: "rpc", uid: "32"}
+  - { name: "httpfs", uid: "1024"}
+  - { name: "slider", uid: "1021"}
+  - { name: "ranger", uid: "1022"}
+  - { name: "kms", uid: "1023"}
+  - { name: "hue", uid: "1025"}
+  - { name: "zeppelin", uid: "1026"}
+  - { name: "nimbus", uid: "1027"}
+  - { name: "ambari-server", uid: "1028"}
+  - { name: "ranger-storm", uid: "1029"}
+  - { name: "storm-hdp_prod", uid: "1030"}
+  - { name: "hdsadmins", uid: "1031"}
+  - { name: "ANONYMOUS", uid: "1032"}
+  - { name: "schulzwg", uid: "10001"}
+  - { name: "hurleyrs", uid: "10002"}
+  - { name: "rpcuser", uid: "29"}
+  - { name: "nfsnobody", uid: "65534"}
+  - { name: "byronw3n", uid: "10000"}
+  - { name: "livy", uid: "1037"}
+
